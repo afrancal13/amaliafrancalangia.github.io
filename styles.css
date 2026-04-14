@@ -5,8 +5,10 @@
    ============================================ */
 :root {
     --primary-color: #1A1A1A;
+    --accent-vermillion: #C1272D;
+    --accent-vermillion-dark: #8B1A1F;
+    --accent-vermillion-light: #E63946;
     --accent-burgundy: #A91B3D;
-    --accent-burgundy-dark: #8B1538;
     --accent-gold: #C9A961;
     --text-dark: #1A1A1A;
     --text-medium: #666666;
@@ -63,7 +65,7 @@ h2 {
     text-align: center;
     padding-bottom: 1rem;
     position: relative;
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
 }
 
 h2::after {
@@ -74,13 +76,13 @@ h2::after {
     transform: translateX(-50%);
     width: 50px;
     height: 1px;
-    background-color: var(--accent-burgundy);
+    background-color: var(--accent-vermillion);
 }
 
 h3 {
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
     margin-bottom: 1.2rem;
     letter-spacing: 0.5px;
 }
@@ -105,7 +107,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
 }
 
 /* ============================================
@@ -157,8 +159,8 @@ a:hover {
 
 .main-header .nav-links a:hover,
 .main-header .nav-links a.active {
-    color: var(--accent-burgundy);
-    border-bottom-color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
+    border-bottom-color: var(--accent-vermillion);
 }
 
 .menu-toggle {
@@ -185,39 +187,70 @@ a:hover {
     overflow: hidden;
 }
 
-/* Fabric Ribbon Accent */
+/* Luxurious Fabric Ribbon Accent */
 .hero-fullscreen::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -5%;
-    right: -5%;
-    height: 120px;
-    background: linear-gradient(135deg,
-        var(--accent-burgundy) 0%,
-        var(--accent-burgundy-dark) 50%,
-        var(--accent-burgundy) 100%);
-    transform: skewY(-2deg);
-    transform-origin: top left;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background:
+        /* Fabric texture - subtle vertical lines */
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0,0,0,0.03) 2px,
+            rgba(0,0,0,0.03) 4px
+        ),
+        /* Main fabric color with folds */
+        linear-gradient(
+            to right,
+            var(--accent-vermillion-dark) 0%,
+            var(--accent-vermillion) 15%,
+            var(--accent-vermillion-light) 30%,
+            var(--accent-vermillion) 45%,
+            var(--accent-vermillion-dark) 60%,
+            var(--accent-vermillion) 75%,
+            var(--accent-vermillion-light) 90%,
+            var(--accent-vermillion) 100%
+        );
     box-shadow:
-        0 8px 20px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.1),
-        inset 0 -1px 0 rgba(0,0,0,0.2);
+        /* Bottom shadow for depth */
+        0 10px 25px rgba(0,0,0,0.35),
+        /* Subtle highlights on top */
+        inset 0 2px 1px rgba(255,255,255,0.15),
+        /* Shadow at bottom edge */
+        inset 0 -2px 4px rgba(0,0,0,0.3),
+        /* Side shadows for dimensionality */
+        inset 5px 0 10px rgba(0,0,0,0.15),
+        inset -5px 0 10px rgba(0,0,0,0.15);
     z-index: 3;
 }
 
-/* Ribbon fold effect */
+/* Ribbon drape/fold effect on right side */
 .hero-fullscreen::after {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 40px 40px 0;
-    border-color: transparent var(--accent-burgundy-dark) transparent transparent;
-    z-index: 4;
+    top: 100px;
+    right: 15%;
+    width: 80px;
+    height: 60px;
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-vermillion-dark) 0%,
+            var(--accent-vermillion) 50%,
+            var(--accent-vermillion-light) 100%
+        );
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+    box-shadow:
+        0 8px 15px rgba(0,0,0,0.4),
+        inset -2px 0 5px rgba(0,0,0,0.3),
+        inset 2px 0 3px rgba(255,255,255,0.1);
+    transform: perspective(100px) rotateX(-10deg);
+    z-index: 2;
 }
 
 .hero-overlay {
@@ -262,7 +295,7 @@ a:hover {
     display: block;
     width: 100px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-burgundy), var(--accent-gold));
+    background: linear-gradient(90deg, var(--accent-vermillion), var(--accent-gold));
     margin-top: 2rem;
 }
 
@@ -316,8 +349,8 @@ header:not(.main-header) .nav-links a {
 
 header:not(.main-header) .nav-links a:hover,
 header:not(.main-header) .nav-links a.active {
-    color: var(--accent-burgundy);
-    border-bottom-color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
+    border-bottom-color: var(--accent-vermillion);
 }
 
 /* ============================================
@@ -345,7 +378,7 @@ header:not(.main-header) .nav-links a.active {
 
 .hero .subtitle {
     font-size: 1.3rem;
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 400;
@@ -385,7 +418,7 @@ header:not(.main-header) .nav-links a.active {
 .bio p:first-letter {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
 }
 
 /* ============================================
@@ -444,7 +477,7 @@ header:not(.main-header) .nav-links a.active {
 
 .role-year {
     font-weight: 400;
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
     font-size: 0.9rem;
     align-self: flex-start;
     font-family: 'Playfair Display', serif;
@@ -479,7 +512,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .skill-category h4 {
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
     margin-bottom: 0.6rem;
     font-size: 0.95rem;
     font-weight: 600;
@@ -520,7 +553,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .photo-placeholder:hover {
-    border-color: var(--accent-burgundy);
+    border-color: var(--accent-vermillion);
 }
 
 /* ============================================
@@ -605,10 +638,10 @@ video {
 
 .email-button {
     display: inline-block;
-    background-color: var(--accent-burgundy);
+    background-color: var(--accent-vermillion);
     color: white;
     padding: 0.9rem 2.2rem;
-    border: 1px solid var(--accent-burgundy);
+    border: 1px solid var(--accent-vermillion);
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 1.5px;
@@ -618,7 +651,7 @@ video {
 
 .email-button:hover {
     background-color: var(--bg-white);
-    color: var(--accent-burgundy);
+    color: var(--accent-vermillion);
 }
 
 /* ============================================
