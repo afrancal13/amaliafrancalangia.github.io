@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Pinyon+Script&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -31,7 +33,7 @@
     transform: translate(-50%, -50%);
     z-index: 0;
     pointer-events: none;
-    opacity: 0.045;
+    opacity: 0.35;
   }
 
   nav {
@@ -70,7 +72,6 @@
 
   section { scroll-margin-top: 70px; position: relative; z-index: 1; }
 
-  /* HERO */
   #hero {
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -142,7 +143,6 @@
     opacity: 0.45;
   }
 
-  /* SHARED */
   .section-inner { max-width: 960px; margin: 0 auto; padding: 6rem 2rem; }
 
   .section-label {
@@ -169,7 +169,6 @@
     margin: 1.5rem 0 2.5rem;
   }
 
-  /* ABOUT */
   #about { background: var(--dark-mid); border-bottom: 1px solid var(--border-gold); }
 
   .about-grid {
@@ -202,7 +201,6 @@
     font-family: 'Cormorant Garamond', serif;
   }
 
-  /* RESUME */
   #resume { background: var(--dark-surface); border-bottom: 1px solid var(--border-gold); }
 
   .resume-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; }
@@ -226,7 +224,6 @@
   .resume-org { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.85rem; color: var(--gold); letter-spacing: 0.08em; margin-bottom: 0.15rem; }
   .resume-year { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--gold-pale); opacity: 0.4; letter-spacing: 0.1em; }
 
-  /* MEDIA */
   #media { background: var(--dark-mid); border-bottom: 1px solid var(--border-gold); }
 
   .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
@@ -249,7 +246,6 @@
 
   .media-label { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.8rem; letter-spacing: 0.15em; color: var(--gold); opacity: 0.75; text-align: center; padding: 0 0.5rem; }
 
-  /* PHOTOS */
   #photos { background: var(--dark-surface); border-bottom: 1px solid var(--border-gold); }
 
   .photos-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; margin-top: 3rem; }
@@ -272,7 +268,6 @@
   .photo-cell.tall { grid-row: span 2; aspect-ratio: 2/3; }
   .photo-cell.short { aspect-ratio: 3/2; }
 
-  /* CONTACT */
   #contact { background: var(--dark-mid); }
 
   .contact-inner { max-width: 560px; margin: 0 auto; text-align: center; padding: 6rem 2rem; }
@@ -340,23 +335,17 @@
 </head>
 <body>
 
-<!-- Chandelier Watermark SVG -->
 <div class="chandelier-watermark">
 <svg width="520" height="680" viewBox="0 0 520 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Chain/stem -->
   <line x1="260" y1="0" x2="260" y2="80" stroke="#c9a84c" stroke-width="3"/>
-  <!-- Crown ring -->
   <ellipse cx="260" cy="85" rx="38" ry="12" stroke="#c9a84c" stroke-width="2" fill="none"/>
-  <!-- Top canopy -->
   <path d="M222 85 Q210 110 190 120 L330 120 Q310 110 298 85 Z" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-  <!-- Main arms - top tier -->
   <line x1="260" y1="120" x2="120" y2="175" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="120" x2="400" y2="175" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="120" x2="170" y2="185" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="120" x2="350" y2="185" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="120" x2="230" y2="175" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="120" x2="290" y2="175" stroke="#c9a84c" stroke-width="1.2"/>
-  <!-- Top tier candles/bobeches -->
   <ellipse cx="120" cy="178" rx="14" ry="5" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="116" y="173" width="8" height="18" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M120 173 Q121 168 120 163 Q119 168 120 173" stroke="#c9a84c" stroke-width="1.5"/>
@@ -369,19 +358,15 @@
   <ellipse cx="350" cy="188" rx="12" ry="4" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="346" y="184" width="8" height="16" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M350 184 Q351 179 350 174 Q349 179 350 184" stroke="#c9a84c" stroke-width="1.5"/>
-  <!-- Center column -->
   <line x1="260" y1="120" x2="260" y2="300" stroke="#c9a84c" stroke-width="2"/>
-  <!-- Mid bobeche rings -->
   <ellipse cx="260" cy="180" rx="22" ry="7" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
   <ellipse cx="260" cy="230" rx="18" ry="6" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
-  <!-- Mid tier arms -->
   <line x1="260" y1="230" x2="80" y2="310" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="230" x2="440" y2="310" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="230" x2="140" y2="320" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="230" x2="380" y2="320" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="230" x2="200" y2="305" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="230" x2="320" y2="305" stroke="#c9a84c" stroke-width="1.2"/>
-  <!-- Mid candles -->
   <ellipse cx="80" cy="314" rx="14" ry="5" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="76" y="309" width="8" height="18" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M80 309 Q81 304 80 299 Q79 304 80 309" stroke="#c9a84c" stroke-width="1.5"/>
@@ -400,11 +385,9 @@
   <ellipse cx="320" cy="308" rx="11" ry="4" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="316" y="304" width="8" height="15" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M320 304 Q321 299 320 294 Q319 299 320 304" stroke="#c9a84c" stroke-width="1.5"/>
-  <!-- Lower column -->
   <line x1="260" y1="300" x2="260" y2="430" stroke="#c9a84c" stroke-width="2"/>
   <ellipse cx="260" cy="310" rx="16" ry="5" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <ellipse cx="260" cy="370" rx="20" ry="6" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-  <!-- Bottom tier arms -->
   <line x1="260" y1="370" x2="110" y2="440" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="370" x2="410" y2="440" stroke="#c9a84c" stroke-width="1.5"/>
   <line x1="260" y1="370" x2="160" y2="450" stroke="#c9a84c" stroke-width="1.2"/>
@@ -412,7 +395,6 @@
   <line x1="260" y1="370" x2="210" y2="440" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="370" x2="310" y2="440" stroke="#c9a84c" stroke-width="1.2"/>
   <line x1="260" y1="370" x2="260" y2="450" stroke="#c9a84c" stroke-width="1.2"/>
-  <!-- Bottom candles -->
   <ellipse cx="110" cy="443" rx="14" ry="5" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="106" y="438" width="8" height="18" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M110 438 Q111 433 110 428 Q109 433 110 438" stroke="#c9a84c" stroke-width="1.5"/>
@@ -434,7 +416,6 @@
   <ellipse cx="260" cy="453" rx="11" ry="4" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <rect x="256" y="449" width="8" height="15" rx="1" stroke="#c9a84c" stroke-width="1" fill="none"/>
   <path d="M260 449 Q261 444 260 439 Q259 444 260 449" stroke="#c9a84c" stroke-width="1.5"/>
-  <!-- Crystal drops - top tier -->
   <line x1="120" y1="191" x2="112" y2="215" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="112" cy="218" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="120" y1="191" x2="120" y2="218" stroke="#c9a84c" stroke-width="0.8"/>
@@ -447,7 +428,6 @@
   <ellipse cx="400" cy="221" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="400" y1="191" x2="408" y2="215" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="408" cy="218" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-  <!-- Crystal drops - mid tier -->
   <line x1="80" y1="327" x2="72" y2="350" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="72" cy="353" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="80" y1="327" x2="80" y2="354" stroke="#c9a84c" stroke-width="0.8"/>
@@ -460,10 +440,8 @@
   <ellipse cx="440" cy="357" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="440" y1="327" x2="448" y2="350" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="448" cy="353" rx="4" ry="7" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-  <!-- Central crystal cascade -->
   <line x1="260" y1="430" x2="260" y2="500" stroke="#c9a84c" stroke-width="1.5"/>
   <ellipse cx="260" cy="432" rx="24" ry="8" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-  <!-- Final crystal drops from base -->
   <line x1="240" y1="440" x2="232" y2="470" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="232" cy="474" rx="4" ry="9" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="248" y1="440" x2="244" y2="475" stroke="#c9a84c" stroke-width="0.8"/>
@@ -474,7 +452,6 @@
   <ellipse cx="276" cy="479" rx="4" ry="9" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
   <line x1="280" y1="440" x2="288" y2="470" stroke="#c9a84c" stroke-width="0.8"/>
   <ellipse cx="288" cy="474" rx="4" ry="9" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-  <!-- Grand finial drop -->
   <line x1="260" y1="500" x2="260" y2="540" stroke="#c9a84c" stroke-width="1.2"/>
   <ellipse cx="260" cy="548" rx="8" ry="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <ellipse cx="260" cy="548" rx="4" ry="8" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
@@ -509,9 +486,9 @@
     <div class="about-grid">
       <div class="about-portrait">Photo</div>
       <div class="about-text">
-        <p>With a voice that commands both the concert hall and the sanctuary, Amalia brings a rare combination of technical mastery and profound emotional depth to every performance. Her artistry spans the grand operatic repertoire as well as the sacred traditions of Jewish liturgical music.</p>
-        <p>Currently serving as a featured soloist at Sinai Temple, Amalia brings her voice to audiences in Los Angeles and beyond — from intimate recitals to full orchestral productions.</p>
-        <p>Her performances are defined by an unwavering commitment to the music, a deep sense of theater, and a voice of exceptional range and luminosity.</p>
+        <p>Soprano Amalia Francalangia earned a Master of Music in Opera Performance at California State University Bob Cole Conservatory in Long Beach, California. While there, she specialized in studying and performing Czech music. She wrote her graduate thesis on singing in Czech, using Dvořák's Biblical Songs as a vehicle for explaining Czech diction and expression, which was published in the <em>NATS Journal of Singing</em> in 2018. As a result of this work, she was invited to the Bob Cole Conservatory Opera Institute to coach a scene from <em>Rusalka</em>.</p>
+        <p>She has performed in productions throughout Southern California, including Pamina and Second Lady in <em>Die Zauberflöte</em>, the title role in <em>Luisa Fernanda</em>, Dido in <em>Dido and Aeneas</em>, Rosalinde in <em>Die Fledermaus</em>, and Micaëla in <em>Carmen</em>. Most recently, she reprised the role of Pamina in <em>Die Zauberflöte</em>. Ms. Francalangia currently studies with Shigemi Matsumoto.</p>
+        <p>Originally from Massachusetts, Ms. Francalangia earned a Bachelor's degree in music from Smith College, where she studied voice under the tutelage of Karen Smith Emerson. After graduating, she moved to the Los Angeles area to pursue singing and participated in several student workshops, including with Songfest, Intimate Opera Company, Celestial Opera Company, and Opera Works. She currently serves on the board of Opera Works.</p>
       </div>
     </div>
   </div>
@@ -526,20 +503,24 @@
       <div>
         <p class="resume-col-title">Operatic Roles</p>
         <div class="resume-entry">
-          <p class="resume-role">Violetta</p>
-          <p class="resume-org">La Traviata — Verdi</p>
+          <p class="resume-role">Pamina</p>
+          <p class="resume-org">Die Zauberflöte — Mozart</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Donna Anna</p>
-          <p class="resume-org">Don Giovanni — Mozart</p>
+          <p class="resume-role">Micaëla</p>
+          <p class="resume-org">Carmen — Bizet</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Mimì</p>
-          <p class="resume-org">La Bohème — Puccini</p>
+          <p class="resume-role">Dido</p>
+          <p class="resume-org">Dido and Aeneas — Purcell</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Countess Almaviva</p>
-          <p class="resume-org">Le Nozze di Figaro — Mozart</p>
+          <p class="resume-role">Rosalinde</p>
+          <p class="resume-org">Die Fledermaus — Strauss</p>
+        </div>
+        <div class="resume-entry">
+          <p class="resume-role">Luisa Fernanda</p>
+          <p class="resume-org">Luisa Fernanda — Torroba</p>
         </div>
       </div>
       <div>
@@ -550,17 +531,16 @@
           <p class="resume-year">Current</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Concert Soloist</p>
-          <p class="resume-org">Various Ensembles, Los Angeles</p>
-          <p class="resume-year">Ongoing</p>
+          <p class="resume-role">Master of Music</p>
+          <p class="resume-org">Opera Performance, CSU Bob Cole Conservatory</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Voice</p>
-          <p class="resume-org">Add your training here</p>
+          <p class="resume-role">Bachelor of Music</p>
+          <p class="resume-org">Smith College</p>
         </div>
         <div class="resume-entry">
-          <p class="resume-role">Masterclasses &amp; Awards</p>
-          <p class="resume-org">Add your honors here</p>
+          <p class="resume-role">Workshops</p>
+          <p class="resume-org">Songfest, Intimate Opera, Celestial Opera, Opera Works</p>
         </div>
       </div>
     </div>
@@ -621,7 +601,7 @@
 </section>
 
 <footer>
-  &copy; 2026 Amalia &nbsp;&nbsp;·&nbsp;&nbsp; Opera Singer
+  &copy; 2026 Amalia Francalangia &nbsp;&nbsp;·&nbsp;&nbsp; Opera Singer
 </footer>
 
 <script>
