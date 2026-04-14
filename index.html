@@ -10,7 +10,7 @@
 
   body {
     font-family: 'Cormorant Garamond', Georgia, serif;
-    background: #0a0507;
+    background: #1a0810;
     color: #f5e6c8;
     overflow-x: hidden;
   }
@@ -21,14 +21,14 @@
     --gold-pale: #f5e6c8;
     --crimson: #7a1a2e;
     --crimson-deep: #4a0d1a;
-    --dark: #0a0507;
-    --dark-mid: #150a0f;
-    --dark-surface: #1e1018;
+    --dark: #1a0810;
+    --dark-mid: #230f18;
+    --dark-surface: #2c1420;
     --border-gold: #c9a84c44;
   }
 
   .chandelier-watermark {
-    position: fixed;
+    position: absolute;
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
@@ -50,6 +50,7 @@
     font-size: 1.9rem;
     color: var(--gold);
     line-height: 1;
+    margin-left: auto;
   }
 
   .nav-links {
@@ -226,25 +227,15 @@
 
   #media { background: var(--dark-mid); border-bottom: 1px solid var(--border-gold); }
 
-  .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .media-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 3rem; }
 
-  .media-card {
-    border: 1px solid var(--border-gold);
-    background: var(--crimson-deep);
-    aspect-ratio: 16/10;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 0.75rem;
-    cursor: pointer;
-    transition: border-color 0.3s;
-  }
+  .media-item { display: flex; flex-direction: column; gap: 0.75rem; }
 
-  .media-card:hover { border-color: var(--gold); }
+  .media-item iframe { width: 100%; aspect-ratio: 16/9; border: 1px solid var(--border-gold); }
 
-  .play-btn { width: 42px; height: 42px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-  .play-triangle { width: 0; height: 0; border-top: 7px solid transparent; border-bottom: 7px solid transparent; border-left: 12px solid var(--gold); margin-left: 3px; }
+  .media-label { font-family: 'Pinyon Script', cursive; font-size: 1.4rem; color: var(--gold); text-align: center; }
 
-  .media-label { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.8rem; letter-spacing: 0.15em; color: var(--gold); opacity: 0.75; text-align: center; padding: 0 0.5rem; }
+  .media-service { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.75rem; letter-spacing: 0.15em; color: var(--gold-pale); opacity: 0.5; text-align: center; text-transform: uppercase; }
 
   #photos { background: var(--dark-surface); border-bottom: 1px solid var(--border-gold); }
 
@@ -335,7 +326,7 @@
 </head>
 <body>
 
-<div class="chandelier-watermark">
+
 <svg width="520" height="680" viewBox="0 0 520 680" fill="none" xmlns="http://www.w3.org/2000/svg">
   <line x1="260" y1="0" x2="260" y2="80" stroke="#c9a84c" stroke-width="3"/>
   <ellipse cx="260" cy="85" rx="38" ry="12" stroke="#c9a84c" stroke-width="2" fill="none"/>
@@ -455,11 +446,9 @@
   <line x1="260" y1="500" x2="260" y2="540" stroke="#c9a84c" stroke-width="1.2"/>
   <ellipse cx="260" cy="548" rx="8" ry="14" stroke="#c9a84c" stroke-width="1.2" fill="none"/>
   <ellipse cx="260" cy="548" rx="4" ry="8" stroke="#c9a84c" stroke-width="0.8" fill="none"/>
-</svg>
 </div>
-
-<nav>
-  <div class="nav-logo">Amalia</div>
+  <div class="hero-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="nav-logo">Amalia Francalangia</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#resume">Resume</a></li>
@@ -470,7 +459,7 @@
 </nav>
 
 <section id="hero">
-  <div class="hero-ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <div class="chandelier-watermark">
   <h1 class="hero-name">Amalia</h1>
   <div class="hero-divider"></div>
   <p class="hero-tagline">Opera Singer</p>
@@ -553,17 +542,40 @@
     <h2 class="section-title">Media</h2>
     <div class="section-rule"></div>
     <div class="media-grid">
-      <div class="media-card">
-        <div class="play-btn"><div class="play-triangle"></div></div>
-        <p class="media-label">Aria — Video Placeholder</p>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/BxfSF5baGy8?start=947" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">L'cha Adonai</p>
+        <p class="media-service">Rosh Hashanah Day 1</p>
       </div>
-      <div class="media-card">
-        <div class="play-btn"><div class="play-triangle"></div></div>
-        <p class="media-label">Recital — Video Placeholder</p>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/svtFlkprYIg?start=5658" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">Uvashofar Gadol</p>
+        <p class="media-service">Rosh Hashanah Day 2</p>
       </div>
-      <div class="media-card">
-        <div class="play-btn"><div class="play-triangle"></div></div>
-        <p class="media-label">Live Concert — Video Placeholder</p>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/svtFlkprYIg?start=7873" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">Y'hiyu L'ratzon</p>
+        <p class="media-service">Rosh Hashanah Day 2</p>
+      </div>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/svtFlkprYIg?start=11428" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">B'sefer Chayim</p>
+        <p class="media-service">Rosh Hashanah Day 2</p>
+      </div>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/5L7Rm1k8JTk?start=2843" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">Kol Nidre</p>
+        <p class="media-service">Kol Nidre</p>
+      </div>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/XlaSu-_MQbE?start=2245" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">Y'halleulu</p>
+        <p class="media-service">Yom Kippur</p>
+      </div>
+      <div class="media-item">
+        <iframe src="https://www.youtube.com/embed/XlaSu-_MQbE?start=4221" frameborder="0" allowfullscreen></iframe>
+        <p class="media-label">Mi Chamocha</p>
+        <p class="media-service">Yom Kippur</p>
       </div>
     </div>
   </div>
