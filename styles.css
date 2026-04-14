@@ -4,19 +4,18 @@
    CSS Variables & Color Scheme
    ============================================ */
 :root {
-    --primary-color: #1A1A1A;
-    --accent-vermillion: #C1272D;
-    --accent-vermillion-dark: #8B1A1F;
-    --accent-vermillion-light: #E63946;
-    --accent-burgundy: #A91B3D;
-    --accent-gold: #C9A961;
-    --text-dark: #1A1A1A;
-    --text-medium: #666666;
-    --text-light: #999999;
+    --primary-color: #0A1128;
+    --navy-deep: #0A1128;
+    --navy-medium: #1C2541;
+    --navy-light: #2E3D5C;
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #E5C158;
+    --text-ivory: #FFFFF0;
+    --text-cream: #F8F4E3;
+    --text-light: #C9C5B8;
     --bg-white: #FFFFFF;
     --bg-cream: #FDFCFB;
-    --bg-gray: #B8B8B8;
-    --border-color: #E5E5E5;
+    --border-color: #3A4A6B;
 }
 
 /* ============================================
@@ -34,9 +33,9 @@ html {
 
 body {
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    color: var(--text-dark);
+    color: var(--text-cream);
     line-height: 1.7;
-    background-color: var(--bg-white);
+    background-color: var(--navy-deep);
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
@@ -49,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.2;
     margin-bottom: 0.8rem;
-    color: var(--text-dark);
+    color: var(--text-ivory);
 }
 
 h1 {
@@ -65,7 +64,7 @@ h2 {
     text-align: center;
     padding-bottom: 1rem;
     position: relative;
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
 }
 
 h2::after {
@@ -76,13 +75,13 @@ h2::after {
     transform: translateX(-50%);
     width: 50px;
     height: 1px;
-    background-color: var(--accent-vermillion);
+    background-color: var(--accent-gold);
 }
 
 h3 {
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
     margin-bottom: 1.2rem;
     letter-spacing: 0.5px;
 }
@@ -91,23 +90,24 @@ h4 {
     font-size: 1.05rem;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
+    color: var(--text-ivory);
 }
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-medium);
+    color: var(--text-cream);
     font-size: 0.95rem;
     line-height: 1.7;
 }
 
 a {
-    color: var(--text-dark);
+    color: var(--text-ivory);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
 }
 
 /* ============================================
@@ -136,7 +136,7 @@ a:hover {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 400;
-    color: var(--primary-color);
+    color: var(--text-ivory);
     text-decoration: none;
     letter-spacing: 1px;
 }
@@ -148,7 +148,7 @@ a:hover {
 }
 
 .main-header .nav-links a {
-    color: var(--text-dark);
+    color: var(--text-cream);
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -159,15 +159,15 @@ a:hover {
 
 .main-header .nav-links a:hover,
 .main-header .nav-links a.active {
-    color: var(--accent-vermillion);
-    border-bottom-color: var(--accent-vermillion);
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
 }
 
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: var(--text-dark);
+    color: var(--text-ivory);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -180,77 +180,11 @@ a:hover {
     width: 100%;
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(135deg, var(--bg-gray) 0%, #A8A8A8 100%);
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-medium) 100%);
     display: flex;
     align-items: center;
     justify-content: flex-start;
     overflow: hidden;
-}
-
-/* Luxurious Fabric Ribbon Accent */
-.hero-fullscreen::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background:
-        /* Fabric texture - subtle vertical lines */
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(0,0,0,0.03) 2px,
-            rgba(0,0,0,0.03) 4px
-        ),
-        /* Main fabric color with folds */
-        linear-gradient(
-            to right,
-            var(--accent-vermillion-dark) 0%,
-            var(--accent-vermillion) 15%,
-            var(--accent-vermillion-light) 30%,
-            var(--accent-vermillion) 45%,
-            var(--accent-vermillion-dark) 60%,
-            var(--accent-vermillion) 75%,
-            var(--accent-vermillion-light) 90%,
-            var(--accent-vermillion) 100%
-        );
-    box-shadow:
-        /* Bottom shadow for depth */
-        0 10px 25px rgba(0,0,0,0.35),
-        /* Subtle highlights on top */
-        inset 0 2px 1px rgba(255,255,255,0.15),
-        /* Shadow at bottom edge */
-        inset 0 -2px 4px rgba(0,0,0,0.3),
-        /* Side shadows for dimensionality */
-        inset 5px 0 10px rgba(0,0,0,0.15),
-        inset -5px 0 10px rgba(0,0,0,0.15);
-    z-index: 3;
-}
-
-/* Ribbon drape/fold effect on right side */
-.hero-fullscreen::after {
-    content: '';
-    position: absolute;
-    top: 100px;
-    right: 15%;
-    width: 80px;
-    height: 60px;
-    background:
-        linear-gradient(
-            135deg,
-            var(--accent-vermillion-dark) 0%,
-            var(--accent-vermillion) 50%,
-            var(--accent-vermillion-light) 100%
-        );
-    clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
-    box-shadow:
-        0 8px 15px rgba(0,0,0,0.4),
-        inset -2px 0 5px rgba(0,0,0,0.3),
-        inset 2px 0 3px rgba(255,255,255,0.1);
-    transform: perspective(100px) rotateX(-10deg);
-    z-index: 2;
 }
 
 .hero-overlay {
@@ -260,50 +194,33 @@ a:hover {
     max-width: 1400px;
 }
 
-.hero-overlay::before {
-    content: '';
-    position: absolute;
-    top: -100vh;
-    left: -100vw;
-    right: -100vw;
-    bottom: -100vh;
-    background:
-        linear-gradient(135deg, rgba(169, 27, 61, 0.15) 0%, transparent 50%),
-        linear-gradient(225deg, rgba(201, 169, 97, 0.1) 0%, transparent 50%);
-    z-index: -1;
-    pointer-events: none;
-}
-
 .hero-name {
     font-family: 'Playfair Display', serif;
     font-size: 7rem;
     font-weight: 400;
-    color: var(--bg-white);
+    color: var(--text-ivory);
     line-height: 1;
     letter-spacing: 2px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
     margin: 0;
 }
 
-.hero-name::first-line {
-    color: var(--bg-white);
-}
-
-/* Subtle color accent on second line */
+/* Gold accent line */
 .hero-name::after {
     content: '';
     display: block;
-    width: 100px;
+    width: 120px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-vermillion), var(--accent-gold));
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
     margin-top: 2rem;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 /* ============================================
    Standard Header (for other pages)
    ============================================ */
 header:not(.main-header) {
-    background-color: var(--bg-white);
+    background-color: var(--navy-deep);
     padding: 1.2rem 0;
     position: sticky;
     top: 0;
@@ -324,7 +241,7 @@ header:not(.main-header) .logo {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--text-dark);
+    color: var(--text-ivory);
     text-decoration: none;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -337,7 +254,7 @@ header:not(.main-header) .nav-links {
 }
 
 header:not(.main-header) .nav-links a {
-    color: var(--text-medium);
+    color: var(--text-cream);
     font-weight: 400;
     font-size: 0.85rem;
     letter-spacing: 1.5px;
@@ -349,15 +266,15 @@ header:not(.main-header) .nav-links a {
 
 header:not(.main-header) .nav-links a:hover,
 header:not(.main-header) .nav-links a.active {
-    color: var(--accent-vermillion);
-    border-bottom-color: var(--accent-vermillion);
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
 }
 
 /* ============================================
    Standard Hero (for other pages)
    ============================================ */
 .hero {
-    background-color: var(--bg-cream);
+    background: linear-gradient(135deg, var(--navy-medium) 0%, var(--navy-light) 100%);
     text-align: center;
     padding: 5rem 2rem;
     border-bottom: 1px solid var(--border-color);
@@ -369,7 +286,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .hero h1 {
-    color: var(--text-dark);
+    color: var(--text-ivory);
     font-size: 3rem;
     margin-bottom: 0.8rem;
     font-weight: 400;
@@ -378,7 +295,7 @@ header:not(.main-header) .nav-links a.active {
 
 .hero .subtitle {
     font-size: 1.3rem;
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
     font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 400;
@@ -392,10 +309,11 @@ header:not(.main-header) .nav-links a.active {
     max-width: 950px;
     margin: 0 auto;
     padding: 2.8rem 2.5rem;
+    background-color: var(--navy-deep);
 }
 
 .content-section {
-    background: var(--bg-white);
+    background: transparent;
     margin-bottom: 2.5rem;
 }
 
@@ -412,13 +330,13 @@ header:not(.main-header) .nav-links a.active {
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 1.2rem;
-    color: var(--text-medium);
+    color: var(--text-cream);
 }
 
 .bio p:first-letter {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
 }
 
 /* ============================================
@@ -457,7 +375,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .role-details h4 {
-    color: var(--text-dark);
+    color: var(--text-ivory);
     font-size: 0.98rem;
     margin-bottom: 0.2rem;
     font-weight: 600;
@@ -465,7 +383,7 @@ header:not(.main-header) .nav-links a.active {
 
 .role-details .opera-title {
     font-style: italic;
-    color: var(--text-medium);
+    color: var(--text-cream);
     margin-bottom: 0.15rem;
     font-size: 0.85rem;
 }
@@ -477,7 +395,7 @@ header:not(.main-header) .nav-links a.active {
 
 .role-year {
     font-weight: 400;
-    color: var(--accent-vermillion);
+    color: var(--accent-gold);
     font-size: 0.9rem;
     align-self: flex-start;
     font-family: 'Playfair Display', serif;
@@ -500,7 +418,7 @@ header:not(.main-header) .nav-links a.active {
 .publication-item {
     font-style: italic;
     line-height: 1.6;
-    color: var(--text-medium);
+    color: var(--text-cream);
     font-size: 0.9rem;
 }
 
@@ -525,7 +443,7 @@ header:not(.main-header) .nav-links a.active {
 
 .skill-category li {
     padding: 0.3rem 0;
-    color: var(--text-medium);
+    color: var(--text-cream);
     font-size: 0.85rem;
 }
 
@@ -541,7 +459,7 @@ header:not(.main-header) .nav-links a.active {
 
 .photo-placeholder {
     aspect-ratio: 3/4;
-    background-color: var(--bg-light);
+    background-color: var(--navy-medium);
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
@@ -553,7 +471,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .photo-placeholder:hover {
-    border-color: var(--accent-vermillion);
+    border-color: var(--accent-gold);
 }
 
 /* ============================================
@@ -582,7 +500,7 @@ header:not(.main-header) .nav-links a.active {
 }
 
 .media-item h4 {
-    color: var(--text-dark);
+    color: var(--text-ivory);
     font-size: 0.95rem;
     margin-bottom: 0.25rem;
     font-weight: 600;
@@ -638,27 +556,27 @@ video {
 
 .email-button {
     display: inline-block;
-    background-color: var(--accent-vermillion);
-    color: white;
+    background-color: var(--accent-gold);
+    color: var(--navy-deep);
     padding: 0.9rem 2.2rem;
-    border: 1px solid var(--accent-vermillion);
+    border: 2px solid var(--accent-gold);
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
 
 .email-button:hover {
-    background-color: var(--bg-white);
-    color: var(--accent-vermillion);
+    background-color: transparent;
+    color: var(--accent-gold);
 }
 
 /* ============================================
    Footer
    ============================================ */
 footer {
-    background-color: var(--bg-cream);
+    background-color: var(--navy-medium);
     border-top: 1px solid var(--border-color);
     text-align: center;
     padding: 2rem;
@@ -714,7 +632,7 @@ footer p {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.98);
+        background: var(--navy-deep);
         padding: 1rem;
         gap: 0;
         border-bottom: 1px solid var(--border-color);
@@ -769,7 +687,7 @@ footer p {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--bg-white);
+        background: var(--navy-deep);
         padding: 0.8rem;
         gap: 0;
         border-bottom: 1px solid var(--border-color);
