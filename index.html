@@ -239,25 +239,23 @@
 
   #photos { background: var(--dark-surface); border-bottom: 1px solid var(--border-gold); }
 
-  .photos-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; margin-top: 3rem; }
+  .photos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
 
   .photo-cell {
-    background: var(--crimson-deep);
     border: 1px solid var(--border-gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    overflow: hidden;
+    aspect-ratio: 3/4;
     cursor: pointer;
   }
 
-  .photo-cell:hover { opacity: 0.8; }
-  .photo-cell.tall { grid-row: span 2; aspect-ratio: 2/3; }
-  .photo-cell.short { aspect-ratio: 3/2; }
+  .photo-cell img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+
+  .photo-cell:hover img { transform: scale(1.05); }
 
   #contact { background: var(--dark-mid); }
 
@@ -587,11 +585,16 @@
     <h2 class="section-title">Photos</h2>
     <div class="section-rule"></div>
     <div class="photos-grid">
-      <div class="photo-cell tall">Press Photo</div>
-      <div class="photo-cell short">Performance</div>
-      <div class="photo-cell short">Portrait</div>
-      <div class="photo-cell short">Backstage</div>
-      <div class="photo-cell short">Rehearsal</div>
+      <div class="photo-cell"><img src="https://i.imgur.com/ttTR0yJ.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/HyYL6Ku.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/9QviE3q.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/Ke7tIAd.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/4RaLfAn.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/YYKKv3q.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/2xw0Ze9.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/l7qrUfn.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/2AmCZzG.jpg" alt="Performance photo" /></div>
+      <div class="photo-cell"><img src="https://i.imgur.com/L22iJYF.jpg" alt="Performance photo" /></div>
     </div>
   </div>
 </section>
